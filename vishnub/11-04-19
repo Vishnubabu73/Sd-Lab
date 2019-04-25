@@ -1,0 +1,201 @@
+student@T44:~$ cd vishnu-git
+bash: cd: vishnu-git: No such file or directory
+student@T44:~$ cd vishnub
+student@T44:~/vishnub$ cd vishnu-git
+student@T44:~/vishnub/vishnu-git$ git init testrepo
+Reinitialized existing Git repository in /home/student/vishnub/vishnu-git/testrepo/.git/
+student@T44:~/vishnub/vishnu-git$ gedit sa4.txt
+student@T44:~/vishnub/vishnu-git$ git add sa4.txt
+fatal: not a git repository (or any of the parent directories): .git
+student@T44:~/vishnub/vishnu-git$ git init test2
+Initialized empty Git repository in /home/student/vishnub/vishnu-git/test2/.git/
+student@T44:~/vishnub/vishnu-git$ git add sa4.txt
+fatal: not a git repository (or any of the parent directories): .git
+student@T44:~/vishnub/vishnu-git$ cd test2
+student@T44:~/vishnub/vishnu-git/test2$ git add sa4.txt
+student@T44:~/vishnub/vishnu-git/test2$ git config user.email "vishnubabu@mca.ajce.in"
+student@T44:~/vishnub/vishnu-git/test2$ git add sa4.txt
+fatal: pathspec 'sa4.txt' did not match any files
+student@T44:~/vishnub/vishnu-git/test2$ gedit sa5.txt
+student@T44:~/vishnub/vishnu-git/test2$ git add sa5.txt
+student@T44:~/vishnub/vishnu-git/test2$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   sa5.txt
+
+student@T44:~/vishnub/vishnu-git/test2$ git commit -m "swap prgm"
+[master (root-commit) d33e93b] swap prgm
+ 1 file changed, 19 insertions(+)
+ create mode 100644 sa5.txt
+student@T44:~/vishnub/vishnu-git/test2$ git status
+On branch master
+nothing to commit, working tree clean
+student@T44:~/vishnub/vishnu-git/test2$ git remote add origin https://github.com/Vishnubabu73/test2
+student@T44:~/vishnub/vishnu-git/test2$ git push origin master
+Username for 'https://github.com': vishnubabu73
+Password for 'https://vishnubabu73@github.com': 
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 368 bytes | 368.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/Vishnubabu73/test2
+ * [new branch]      master -> master
+student@T44:~/vishnub/vishnu-git/test2$ git clone https://github.com/Vishnubabu73/test2
+Cloning into 'test2'...
+Username for 'https://github.com': vishnubabu73
+Password for 'https://vishnubabu73@github.com': 
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+student@T44:~/vishnub/vishnu-git/test2$ git pull test2 master
+From test2
+ * branch            master     -> FETCH_HEAD
+Already up to date.
+student@T44:~/vishnub/vishnu-git/test2$ git pull test2 master
+From test2
+ * branch            master     -> FETCH_HEAD
+Already up to date.
+student@T44:~/vishnub/vishnu-git/test2$ git fetch test2
+From test2
+ * branch            HEAD       -> FETCH_HEAD
+student@T44:~/vishnub/vishnu-git/test2$ git merge test2/master
+merge: test2/master - not something we can merge
+student@T44:~/vishnub/vishnu-git/test2$ git merge origin/master
+Already up to date.
+student@T44:~/vishnub/vishnu-git/test2$ git fetch origin master
+Username for 'https://github.com': vishnubabu73
+Password for 'https://vishnubabu73@github.com': 
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/Vishnubabu73/test2
+ * branch            master     -> FETCH_HEAD
+   d33e93b..493c4e8  master     -> origin/master
+student@T44:~/vishnub/vishnu-git/test2$ git merge master
+Already up to date.
+student@T44:~/vishnub/vishnu-git/test2$ git pull origin master
+Username for 'https://github.com': vishnubabu73
+Password for 'https://vishnubabu73@github.com': 
+From https://github.com/Vishnubabu73/test2
+ * branch            master     -> FETCH_HEAD
+Updating d33e93b..493c4e8
+Fast-forward
+ sa5.txt | 9 +--------
+ 1 file changed, 1 insertion(+), 8 deletions(-)
+student@T44:~/vishnub/vishnu-git/test2$ git diff master
+student@T44:~/vishnub/vishnu-git/test2$ git pull origin master
+Username for 'https://github.com': vishnubabu73
+Password for 'https://vishnubabu73@github.com': 
+From https://github.com/Vishnubabu73/test2
+ * branch            master     -> FETCH_HEAD
+Already up to date.
+student@T44:~/vishnub/vishnu-git/test2$ git checkout main
+error: pathspec 'main' did not match any file(s) known to git.
+student@T44:~/vishnub/vishnu-git/test2$ git checkout -b main
+Switched to a new branch 'main'
+student@T44:~/vishnub/vishnu-git/test2$ git branch main2
+student@T44:~/vishnub/vishnu-git/test2$ git push origin master
+Username for 'https://github.com': vishnubabu73
+Password for 'https://vishnubabu73@github.com': 
+Everything up-to-date
+student@T44:~/vishnub/vishnu-git/test2$ git push origin main2
+Username for 'https://github.com': vishnubabu73
+Password for 'https://vishnubabu73@github.com': 
+Total 0 (delta 0), reused 0 (delta 0)
+remote: 
+remote: Create a pull request for 'main2' on GitHub by visiting:
+remote:      https://github.com/Vishnubabu73/test2/pull/new/main2
+remote: 
+To https://github.com/Vishnubabu73/test2
+ * [new branch]      main2 -> main2
+student@T44:~/vishnub/vishnu-git/test2$ git diff origin test2
+fatal: ambiguous argument 'origin': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+student@T44:~/vishnub/vishnu-git/test2$ git diff origin/test2
+fatal: ambiguous argument 'origin/test2': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+student@T44:~/vishnub/vishnu-git/test2$ git fetch origin master
+Username for 'https://github.com': vishnubabu73
+Password for 'https://vishnubabu73@github.com': 
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/Vishnubabu73/test2
+ * branch            master     -> FETCH_HEAD
+   493c4e8..da8599a  master     -> origin/master
+student@T44:~/vishnub/vishnu-git/test2$ git diff origin/test2
+fatal: ambiguous argument 'origin/test2': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+student@T44:~/vishnub/vishnu-git/test2$ git diff origin/master
+diff --git a/sa5.txt b/sa5.txt
+index 70566e7..386959a 100644
+--- a/sa5.txt
++++ b/sa5.txt
+@@ -7,6 +7,6 @@ int main()
+ 
+     cout << "Before swapping." << endl;
+     cout << "a = " << a << ", b = " << b << endl;
+- cnbdfgmkk
++
+     
+ }
+student@T44:~/vishnub/vishnu-git/test2$ git pull origin test2
+Username for 'https://github.com': vishnubabu73
+Password for 'https://vishnubabu73@github.com': 
+fatal: Couldn't find remote ref test2
+student@T44:~/vishnub/vishnu-git/test2$ git pull origin master
+Username for 'https://github.com': vishnubabu73
+Password for 'https://vishnubabu73@github.com': 
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/Vishnubabu73/test2
+ * branch            master     -> FETCH_HEAD
+   da8599a..07c1b0c  master     -> origin/master
+Updating 493c4e8..07c1b0c
+Fast-forward
+ sa5.txt | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+student@T44:~/vishnub/vishnu-git/test2$ git fetch origin main2
+Username for 'https://github.com': vishnubabu73
+Password for 'https://vishnubabu73@github.com': 
+From https://github.com/Vishnubabu73/test2
+ * branch            main2      -> FETCH_HEAD
+student@T44:~/vishnub/vishnu-git/test2$ git merge main2
+Already up to date.
+student@T44:~/vishnub/vishnu-git/test2$ git merge origin/main2
+Already up to date.
+student@T44:~/vishnub/vishnu-git/test2$ git fetch origin main2
+Username for 'https://github.com': vishnubabu73
+Password for 'https://vishnubabu73@github.com': 
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/Vishnubabu73/test2
+ * branch            main2      -> FETCH_HEAD
+   493c4e8..0791bce  main2      -> origin/main2
+student@T44:~/vishnub/vishnu-git/test2$ git merge origin/main2
+Auto-merging sa5.txt
+CONFLICT (content): Merge conflict in sa5.txt
+Automatic merge failed; fix conflicts and then commit the result.
+student@T44:~/vishnub/vishnu-git/test2$ 
+

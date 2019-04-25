@@ -1,0 +1,67 @@
+echo "enter the limit";
+read n;
+s=$n;
+for((i=1;i<=n-1;i++))
+do
+for((j=1;j<=s;j++))
+do
+echo -n " ";
+done
+for((k=1;k<=i;k++))
+do
+echo -n $k;
+done
+for((l=i-1;l>=1;l--))
+do
+echo -n $l;
+done
+echo " ";
+s=$((s-1));
+done
+for((i=$n;i>=0;i--))
+do
+for((j=1;j<=s;j++))
+do
+echo -n " ";
+done
+for((k=1;k<=i;k++))
+do
+echo -n $k;
+done
+for((l=i-1;l>=1;l--))
+do
+echo -n $l;
+done
+echo " ";
+s=$((s+1));
+done
+
+
+
+student@T46:~$ ./check.sh
+enter the limit
+5
+     1 
+    121 
+   12321 
+  1234321 
+ 123454321 
+  1234321 
+   12321 
+    121 
+     1 
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+

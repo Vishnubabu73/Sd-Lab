@@ -1,0 +1,130 @@
+student@T44:~$ cd vishnub
+student@T44:~/vishnub$ cd vishnu-git
+student@T44:~/vishnub/vishnu-git$ gedit sa1.txt
+student@T44:~/vishnub/vishnu-git$ git init myrepo
+Initialized empty Git repository in /home/student/vishnub/vishnu-git/myrepo/.git/
+student@T44:~/vishnub/vishnu-git$ gedit sa1.txt
+student@T44:~/vishnub/vishnu-git$ git add sa1.txt
+fatal: not a git repository (or any of the parent directories): .git
+student@T44:~/vishnub/vishnu-git$ cd myrepo
+student@T44:~/vishnub/vishnu-git/myrepo$ gedit sa1.txt
+student@T44:~/vishnub/vishnu-git/myrepo$ git add sa1.txt
+student@T44:~/vishnub/vishnu-git/myrepo$ git config user.email "vishnubabu@mca.ajce.in"
+student@T44:~/vishnub/vishnu-git/myrepo$ git commit -m "addition"
+[master (root-commit) 72aef49] addition
+ 1 file changed, 16 insertions(+)
+ create mode 100644 sa1.txt
+student@T44:~/vishnub/vishnu-git/myrepo$ git status
+On branch master
+nothing to commit, working tree clean
+student@T44:~/vishnub/vishnu-git/myrepo$ git remote add origin https://github.com/Vishnubabu73/myrepo
+student@T44:~/vishnub/vishnu-git/myrepo$ git push origin master
+Username for 'https://github.com': Vishnubabu123
+Password for 'https://Vishnubabu123@github.com': 
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/Vishnubabu73/myrepo/'
+student@T44:~/vishnub/vishnu-git/myrepo$ git push origin master
+Username for 'https://github.com': Vishnubabu73
+Password for 'https://Vishnubabu73@github.com': 
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 370 bytes | 370.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/Vishnubabu73/myrepo
+ * [new branch]      master -> master
+student@T44:~/vishnub/vishnu-git/myrepo$ gedit init testrepo
+student@T44:~/vishnub/vishnu-git/myrepo$ git init testrepo
+Initialized empty Git repository in /home/student/vishnub/vishnu-git/myrepo/testrepo/.git/
+student@T44:~/vishnub/vishnu-git/myrepo$ cd testrepo
+student@T44:~/vishnub/vishnu-git/myrepo/testrepo$ cd..
+cd..: command not found
+student@T44:~/vishnub/vishnu-git/myrepo/testrepo$ cd ..
+student@T44:~/.local/share/Trash/files$ cd vishnub
+bash: cd: vishnub: No such file or directory
+student@T44:~/.local/share/Trash/files$ cd `
+> 
+> ^C
+student@T44:~/.local/share/Trash/files$ cd ~
+student@T44:~$ cd vishnub
+student@T44:~/vishnub$ cd vishnu-git
+student@T44:~/vishnub/vishnu-git$ git init testrepo
+Initialized empty Git repository in /home/student/vishnub/vishnu-git/testrepo/.git/
+student@T44:~/vishnub/vishnu-git$ cd testrepo
+student@T44:~/vishnub/vishnu-git/testrepo$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+student@T44:~/vishnub/vishnu-git/testrepo$ git config user.name "Vishnubabu73"
+student@T44:~/vishnub/vishnu-git/testrepo$ git config user.email "vishnubabu@mca.ajce.in"
+student@T44:~/vishnub/vishnu-git/testrepo$ gedit README
+student@T44:~/vishnub/vishnu-git/testrepo$ gedit sa2.txt
+student@T44:~/vishnub/vishnu-git/testrepo$ git add sa2.txt
+student@T44:~/vishnub/vishnu-git/testrepo$ git config user.name "Vishnubabu73"
+student@T44:~/vishnub/vishnu-git/testrepo$ git config user.email "vishnubabu@mca.ajce.in"
+student@T44:~/vishnub/vishnu-git/testrepo$ git commit -m "sum"
+[master (root-commit) b3cb189] sum
+ 1 file changed, 17 insertions(+)
+ create mode 100644 sa2.txt
+student@T44:~/vishnub/vishnu-git/testrepo$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	README
+
+nothing added to commit but untracked files present (use "git add" to track)
+student@T44:~/vishnub/vishnu-git/testrepo$ git add README
+student@T44:~/vishnub/vishnu-git/testrepo$ git commit -m "sum"
+[master d980dfb] sum
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README
+student@T44:~/vishnub/vishnu-git/testrepo$ git status
+On branch master
+nothing to commit, working tree clean
+student@T44:~/vishnub/vishnu-git/testrepo$ git push origin master
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+student@T44:~/vishnub/vishnu-git/testrepo$ git remote add origin "https://github.com/Vishnubabu73/myrepo/tree/master"
+student@T44:~/vishnub/vishnu-git/testrepo$ git push origin master
+fatal: repository 'https://github.com/Vishnubabu73/myrepo/tree/master/' not found
+student@T44:~/vishnub/vishnu-git/testrepo$ git remote add origin "https://github.com/Vishnubabu73/myrepo/tree/vishnu"
+fatal: remote origin already exists.
+student@T44:~/vishnub/vishnu-git/testrepo$ git remote add  "https://github.com/Vishnubabu73/myrepo/tree/vishnu"
+usage: git remote add [<options>] <name> <url>
+
+    -f, --fetch           fetch the remote branches
+    --tags                import all tags and associated objects when fetching
+                          or do not fetch any tag at all (--no-tags)
+    -t, --track <branch>  branch(es) to track
+    -m, --master <branch>
+                          master branch
+    --mirror[=<push|fetch>]
+                          set up remote as a mirror to push to or fetch from
+
+student@T44:~/vishnub/vishnu-git/testrepo$ git remote add origin "https://github.com/Vishnubabu73/myrepo/tree/master"
+fatal: remote origin already exists.
+student@T44:~/vishnub/vishnu-git/testrepo$ git push origin master
+fatal: repository 'https://github.com/Vishnubabu73/myrepo/tree/master/' not found
+student@T44:~/vishnub/vishnu-git/testrepo$ git remote add  "https://github.com/Vishnubabu73/testrepo"
+usage: git remote add [<options>] <name> <url>
+
+    -f, --fetch           fetch the remote branches
+    --tags                import all tags and associated objects when fetching
+                          or do not fetch any tag at all (--no-tags)
+    -t, --track <branch>  branch(es) to track
+    -m, --master <branch>
+                          master branch
+    --mirror[=<push|fetch>]
+                          set up remote as a mirror to push to or fetch from
+
+student@T44:~/vishnub/vishnu-git/testrepo$ git remote add origin  "https://github.com/Vishnubabu73/testrepo"
+fatal: remote origin already exists.
+student@T44:~/vishnub/vishnu-git/testrepo$ ^C
+student@T44:~/vishnub/vishnu-git/testrepo$ 
+
